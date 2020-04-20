@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Walmart",
+        "address": "Bobiny 45"
+    },
+    {
+        "name": "Auchan",
+        "address": "Librery 4"
+    },
+    {
+        "name": "Silpo",
+        "address": "Mich 136b"
+    },
+    {
+        "name": "ATB",
+        "address": "Bolendry 11"
+    },
+    {
+        "name": "Fora",
+        "address": "One-Way 6"
+    },
+    {
+        "name": "Novus",
+        "address": "Higway 57"
+    }
+]
