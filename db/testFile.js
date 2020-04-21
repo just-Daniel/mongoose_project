@@ -17,7 +17,7 @@ content = JSON.parse(content);
 //     }
 
 // }
-
+let array = [];
 
 const rl = readline.createInterface({
     input: fs.createReadStream('./db/goods.json'),
@@ -25,23 +25,28 @@ const rl = readline.createInterface({
 });
 
 rl.on('line', (line) => {
-    console.log(`Line from file: ${line}`);
+    // console.log(`Line from file: ${line}`);
+    array.push(line);
+    break;
+    console.log(array);
+
+
     // Warehouse.insertMany(line, function(err, docs) {
     //     if (err) throw err;
     //     console.log('My docs: ', docs);
     // });
 
-    switch (line) {
-        case line:
-            console.log('CHECK: ', line);
-            Warehouse.insertMany(line, function(err, docs) {
-                if (err) throw err;
-                console.log('My docs: ', docs);
-            });
-            break;
-        default:
-            console.log(`Elements ${line} not found`)
-    }
+    // switch (line) {
+    //     case line:
+    //         console.log('CHECK: ', line);
+    //         Warehouse.insertMany(line, function(err, docs) {
+    //             if (err) throw err;
+    //             console.log('My docs: ', docs);
+    //         });
+    //         break;
+    //     default:
+    //         console.log(`Elements ${line} not found`)
+    // }
 });
 
 
