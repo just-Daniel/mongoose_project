@@ -5,10 +5,12 @@ const Schema = mongoose.Schema;
 const orderSchema = new Schema({
     date: { type: Date, default: Date.now },
     customer_id: {
-        type: Schema.Types.ObjectId, ref: 'Customer'
+        type: Schema.Types.ObjectId, 
+        ref: 'Customer'
     },
     goods_id: [{
-        type: Schema.Types.ObjectId, ref: 'Warehouse'
+        type: Schema.Types.ObjectId, 
+        ref: 'Warehouse'
     }],
     amount: Number
 

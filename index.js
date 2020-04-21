@@ -18,33 +18,13 @@ db.once('open', function() {
 // 2) Add customer in base:
 // require('./db/insertCustom');
 
-
-
-
-
-
-
-const createOrder = new Order({
-  date: Date.now(),
-  customer_id: "5e97431a12e96456b0f95a65",
-  goods_id: "5e970ad025ade53172a91941",
-  amount: 60
-})
-
-createOrder.save(function(err){
-  if(err) throw err;
-  console.log('Order created!!!')
-})
-
-
-
-
-
+// 3) Create orders
+require('./db/createOrder');
 
 
 // Functions
 const funcOne = require('./function/task1');
-const funcTwo = require('./function/task2');
-const funcThree = require('./function/task3');
+// const funcTwo = require('./function/task2');
+// const funcThree = require('./function/task3');
 
 
