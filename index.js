@@ -23,7 +23,7 @@ require('./db/createOrder');
 
 
 // Functions
-const funcOne = require('./function/task1');
+// const funcOne = require('./function/task1');  // working 
 // const funcTwo = require('./function/task2');
 // const funcThree = require('./function/task3');
 
