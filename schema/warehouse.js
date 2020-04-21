@@ -10,4 +10,3 @@ const warehouseSchema = new Schema({
 });
 
 module.exports = mongoose.model('Warehouse', warehouseSchema);
-module.exports = warehouseSchema;
