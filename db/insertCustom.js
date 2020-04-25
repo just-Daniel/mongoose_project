@@ -10,3 +10,22 @@ const insertCustom = Customer.insertMany(content, function(err, docs) {
 })
 
 module.exports = insertCustom;
+
+module.exports = Customer.find({}, function(err, docs) {
+  if (!err) {
+    console.log('CHECK: ', docs);
+    console.log('My content: ', content)
+    for (i = 0; i < content.length; i++){
+      if (content[i] !== docs){
+        Customer.insertMany(content, function(err, docs) {
+            if(err) throw err; 
+            console.log('Good!!! ', docs);
+          })
+      } else {
+        console.log('Name is exist!')
+      }
+    }
+  } else {
+    throw err; 
+  }
+})

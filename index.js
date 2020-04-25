@@ -19,7 +19,7 @@ db.once('open', function() {
 // require('./db/insertCustom');
 
 // 3) Create orders
-// require('./db/createOrder');
+require('./db/createOrder');
 
 
 // Functions
@@ -47,8 +47,8 @@ db.once('open', function() {
 
 
 
-let content = require('./db/testFile');
-console.log('CHECK: ', typeof content);
+// let content = require('./db/testFile');
+// console.log('CHECK: ', typeof content);
 
 
 

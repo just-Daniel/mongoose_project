@@ -3,8 +3,8 @@ const readline = require('readline');
 const Warehouse = require('../schema/warehouse')
 
 
-let content = fs.readFileSync('./db/goods.json', 'utf8');
-content = JSON.parse(content);
+// let content = fs.readFileSync('./db/goods.json', 'utf8');
+// content = JSON.parse(content);
 
 // for( i = 0; i < content.length; i++ ){
 //     if(!content.length === 0){
@@ -19,16 +19,25 @@ content = JSON.parse(content);
 // }
 let array = [];
 
-const rl = readline.createInterface({
-    input: fs.createReadStream('./db/goods.json'),
-    crlfDelay: Infinity
-});
+// const rl = readline.createInterface({
+//     input: fs.createReadStream('./db/goods.json'),
+//     crlfDelay: Infinity
+// });
 
-rl.on('line', (line) => {
-    // console.log(`Line from file: ${line}`);
-    array.push(line);
-    break;
-    console.log(array);
+// rl.question('line', (line) => {
+    // console.log(`Line from file: ${line}`); 
+    // array.push(line);
+    // rl.close();
+    // for( i = 0; i < line.length; i++ ){
+    //     if(line[0]){
+    //         array.push(line[0])
+    //         console.log(array)
+    //     } else {
+    //         rl.close();
+    //     }
+    // }
+
+    // console.log(array);
 
 
     // Warehouse.insertMany(line, function(err, docs) {
@@ -47,7 +56,22 @@ rl.on('line', (line) => {
     //     default:
     //         console.log(`Elements ${line} not found`)
     // }
+// });
+
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
 });
+
+rl.question('What your name?', (answer) => {
+
+    array.push(answer)
+    console.log(`Thank you ${answer}`);
+    console.log('ARRAY: ', array);
+    rl.close();
+})
+
 
 
 module.exports = rl;
