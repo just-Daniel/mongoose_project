@@ -17,7 +17,7 @@ const Warehouse = require('../schema/warehouse')
 //     }
 
 // }
-let array = [];
+// let array = [];
 
 // const rl = readline.createInterface({
 //     input: fs.createReadStream('./db/goods.json'),

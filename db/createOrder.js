@@ -1,4 +1,3 @@
-//  --- Does not work ---
 const Order = require('../schema/order');
 const Customer = require('../schema/customer');
 const Warehouse = require('../schema/warehouse');
@@ -21,9 +20,7 @@ const Warehouse = require('../schema/warehouse');
 //     // })
     
 // })
-
   
-
 const nameCustom = 'Novus';
 const nameGoods = 'lime';
 const amountGoods = 300;
