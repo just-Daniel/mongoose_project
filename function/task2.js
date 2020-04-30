@@ -1,15 +1,12 @@
-// const Customer = require('../schema/customer');
+const Customer = require('../schema/customer');
 const Order = require('../schema/order');
 
-// Name, date, amount 
-
-// module.exports = Order.find({}, function(err, res) {
-//     if(err) throw err;
-//     console.log(res[1])
-// })
-// let orders = await Customer
-
-module.exports = Order.find({amount: 260}).populate('Customer').exec((err, res) => {
+// module.exports = Order.findOne({amount: 50}).populate('customer_id').exec((err, res) => {
+module.exports = Order.findOne({amount: 50})
+    .populate({ path: 'customer_id', select: 'name -_id'})
+    .exec((err, res) => {
     if (err) throw err;
-    console.log(res);
+    console.log(res.showFullInfo());
 })
+
+

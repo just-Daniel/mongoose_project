@@ -1,8 +1,8 @@
 const Customer = require('../schema/customer');
 
-const findCustom = Customer.findOne({ name: 'Silpo' }, function(err, answer){
+const findCustom = Customer.findOne({ name: 'Silpo' }, function(err, res){
   if(err) throw err;
-  console.log(answer);
+  console.log(res.showFullInfo());
 });
 
 module.exports = findCustom;

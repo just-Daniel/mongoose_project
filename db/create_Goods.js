@@ -1,15 +1,6 @@
 const prompt = require('prompt');
-const Warehouse = require('./schema/warehouse');
-const mongoose = require('mongoose');
+const Warehouse = require('../schema/warehouse');
 
-mongoose.connect('mongodb://localhost/Mongoose_project', {
-    useNewUrlParser: true
-});
-
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log("Mongoose conecting");
 
   const properties = [
     {
@@ -20,12 +11,12 @@ db.once('open', function() {
     {
         name: 'price',
         validator: /^[0-9]+$/,
-        warning: 'Username must be only numbers'
+        warning: 'Price must be only numbers'
     },
     {
         name: 'amount',
         validator: /^[0-9]+$/,
-        warning: 'Username must be only numbers'
+        warning: 'Amount must be only numbers'
     }
   ];
 
@@ -54,4 +45,4 @@ function readGoodsInfo () {
 }
 readGoodsInfo();
 
-});
+module.exports = readGoodsInfo;

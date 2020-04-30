@@ -12,10 +12,11 @@
 //       else // all saved here
 //     })
 // }
+//==========================================================
+// const Warehouse = require('./schema/warehouse');
 
 
-
-// let docArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let docArray = [{ name: 'cherry', price: '433', amount: '2' }, { name: 'lime', price: '500', amount: '5' }];
 
 // let total = docArray.length;
 // let result = [];
@@ -23,7 +24,7 @@
 // function saveAll(){
 //   var doc = docArray.pop();
 //     console.log('doc', doc);
-//   doc.save(function(err, saved){
+//   Warehouse.save(function(err, saved){
 //     if (err) throw err;//handle error
 
 //     result.push(saved[0]);
@@ -34,34 +35,64 @@
 // }
 
 // saveAll();
+// //======================================================
+// const Warehouse = require('./schema/warehouse');
+
+
+// let result = [];
+// let names = [{ name: 'cherry', price: '433', amount: '2' }, { name: 'lime', price: '500', amount: '5' }];
+
+// function saveAll(){
+//     while( (i = names.shift()) !== undefined ) {
+        
+//         // console.log(i);
+
+//         const createWarehouse = new Warehouse({
+//             name: i.name,
+//             price: i.price,
+//             amount: i.amount
+//         })
+
+//         console.log('good', createWarehouse);
+          
+//         createWarehouse.save(function(err){
+//             if(err) throw err;
+//             console.log('Goods created!!!');
+//             result.push(i)
+//             console.log('result', result);
+//         })
+        
+//     }
+// }
+
+// saveAll();
+
+//=========================================
 
 const Warehouse = require('./schema/warehouse');
 
-var names = ["name_1", "price_1", "amount_1", "name_2" ,"price_2", "amount_2"];
-let result = [];
+module.exports = function saveAll(){
+  console.log('object', goodsArr)
+    Warehouse.insertMany(goodsArr, function(err, docs) {
+      if(err) { //throw err; 
+          console.log('err', err);
+      } else {
+          console.log('docs', docs)
+      }
+    })
+  }
+// let docArray = [{ name: 'cherry', price: 433, amount: 2 }, { name: 'lime', price: 500, amount: 5 }];
 
-function saveAll(){
-    while( a = (i = names.shift()) !== undefined ) {
-        
-        console.log(i);
-        // console.log('arr', arr);
+// function saveAll(){
+// console.log('object', docArray)
+// console.log('Warehouse', Warehouse);
+//   Warehouse.insertMany(docArray, function(err, docs) {
+//     if(err) { //throw err; 
+//         console.log('err', err);
+//     } else {
+//         console.log('docs', docs)
+//     }
+//   })
+// }
 
-        const createWarehouse = new Warehouse({
-            name: i,
-            price: i,
-            amount: i
-          })
-
-        console.log('good', createWarehouse);
-          
-        createWarehouse.save(function(err){
-            if(err) throw err;
-            console.log('Goods created!!!');
-            result.push(i)
-            console.log('result', result);
-        })
-        
-    }
-}
-
-saveAll();
+// saveAll();

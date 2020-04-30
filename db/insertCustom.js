@@ -4,28 +4,30 @@ const fs = require('fs');
 let content = fs.readFileSync('./db/customers.json', 'utf-8')
 content = JSON.parse(content);
 
-const insertCustom = Customer.insertMany(content, function(err, docs) {
-  if(err) throw err; 
-  console.log(docs);
-})
-
-module.exports = insertCustom;
-
-module.exports = Customer.find({}, function(err, docs) {
-  if (!err) {
-    console.log('CHECK: ', docs);
-    console.log('My content: ', content)
-    for (i = 0; i < content.length; i++){
-      if (content[i] !== docs){
-        Customer.insertMany(content, function(err, docs) {
-            if(err) throw err; 
-            console.log('Good!!! ', docs);
-          })
+const insertCustom = function () {
+  Customer.insertMany(content, function(err, docs) {
+    if(err) {
+      if (content) {
+        for(i = 0; i < content.length; i++){
+          let notPass = content.shift(i);
+          insertCustom();
+          console.log('Already exist:', notPass);
+          break;
+        }
+      } else { 
+        console.log('err', err)
+        throw err;
+      }
+    } else {
+      if (docs == 0) {
+        console.log('Items already exist')
       } else {
-        console.log('Name is exist!')
+        console.log(docs);
       }
     }
-  } else {
-    throw err; 
-  }
-})
+  })
+};
+
+insertCustom();
+
+module.exports = insertCustom;
