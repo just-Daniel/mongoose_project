@@ -7,10 +7,10 @@ const orderSchema = new Schema({
         type: Schema.Types.ObjectId, 
         ref: 'Customer'
     },
-    goods_id: [{
+    goods_id: {
         type: Schema.Types.ObjectId, 
         ref: 'Warehouse'
-    }],
+    },
     amount: Number
 
 }, {

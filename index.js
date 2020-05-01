@@ -23,8 +23,8 @@ db.once('open', function() {
 
 // Functions
 // const funcOne = require('./function/task1');  // working 
-const funcTwo = require('./function/task2');  // working
-// const funcThree = require('./function/task3');
+// const funcTwo = require('./function/task2');  // working
+const funcThree = require('./function/task3');
 
 
 });
