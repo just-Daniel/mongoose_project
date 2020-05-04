@@ -27,6 +27,7 @@ module.exports = readGoods;
 
 // const readGoods = () => {
 //     Order.find().populate('customer_id').populate('goods_id').exec((err, res) => {
+//         console.log('res', res)
 //         if (err) throw err;
 //         for (i = 0; i < res.length; i++) {
 //           let goods_amount = res[i].goods_id.amount;

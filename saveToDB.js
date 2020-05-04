@@ -39,33 +39,33 @@
 // const Warehouse = require('./schema/warehouse');
 
 
-// let result = [];
-// let names = [{ name: 'cherry', price: '433', amount: '2' }, { name: 'lime', price: '500', amount: '5' }];
+let result = [];
+let names = [{ name: 'cherry', price: '433', amount: '2' }, { name: 'lime', price: '500', amount: '5' }];
 
-// function saveAll(){
-//     while( (i = names.shift()) !== undefined ) {
+function saveAll(){
+    while( (i = names.shift()) !== undefined ) {
         
-//         // console.log(i);
+        // console.log(i);
 
-//         const createWarehouse = new Warehouse({
-//             name: i.name,
-//             price: i.price,
-//             amount: i.amount
-//         })
+        const createWarehouse = new Warehouse({
+            name: i.name,
+            price: i.price,
+            amount: i.amount
+        })
 
-//         console.log('good', createWarehouse);
+        console.log('good', createWarehouse);
           
-//         createWarehouse.save(function(err){
-//             if(err) throw err;
-//             console.log('Goods created!!!');
-//             result.push(i)
-//             console.log('result', result);
-//         })
+        createWarehouse.save(function(err){
+            if(err) throw err;
+            console.log('Goods created!!!');
+            result.push(i)
+            console.log('result', result);
+        })
         
-//     }
-// }
+    }
+}
 
-// saveAll();
+saveAll();
 
 //=========================================
 

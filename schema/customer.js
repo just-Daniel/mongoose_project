@@ -14,8 +14,7 @@ var customerSchema = new Schema({
 );
 
 customerSchema.method('showFullInfo', function(){
-  return (' Name: ' + this.name + 
-  ',\n Address: ' + this.address);
+  return (' Name: ' + this.name + ', Address: ' + this.address);
 })
 
 const Customer = mongoose.model('Customer', customerSchema);

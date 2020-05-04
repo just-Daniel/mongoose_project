@@ -8,12 +8,15 @@ const insertCustom = function () {
   Customer.insertMany(content, function(err, docs) {
     if(err) {
       if (content) {
-        for(i = 0; i < content.length; i++){
-          let notPass = content.shift(i);
-          insertCustom();
-          console.log('Already exist:', notPass);
-          break;
-        }
+        let notPass = content.shift(0);
+        console.log('Already exist:', notPass);
+        insertCustom();
+        // for(i = 0; i < content.length; i++){
+        //   let notPass = content.shift(i);
+        //   insertCustom();
+        //   console.log('Already exist:', notPass);
+        //   break;
+        // }
       } else { 
         console.log('err', err)
         throw err;

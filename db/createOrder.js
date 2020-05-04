@@ -32,7 +32,7 @@ function readOrderInfo() {
     }
     Customer.findOne({name: result.customer}, function(err, custom){
       if(err) throw err;
-      console.log('Cusomer: ', custom)
+      console.log('Customer: ', custom)
       
       Warehouse.findOne({name: result.goods}, function (err, goods){
           if(err) throw err;
@@ -42,7 +42,7 @@ function readOrderInfo() {
         
         const createOrder = new Order({
           date: Date.now(),
-          customer_id: custom._id,
+          customer_id: custom,
           goods_id: goods,
           amount: result.amount
         })
