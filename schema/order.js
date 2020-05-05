@@ -23,14 +23,4 @@ orderSchema.method('showFullInfo', function(){
     ',\n Amount: ' + this.amount);
 })
 
-// orderSchema.method({
-//     showFullInfo: function(){
-//         return (' Name: ' + this.customer_id.name + 
-//         ',\n Date: ' + this.date + 
-//         ',\n Amount: ' + this.amount)},
-//     showInfo: function (){
-//         console.log('Hi Daniel', this.orderSchema);
-//     }
-// })
-
 module.exports = mongoose.model('Order', orderSchema);
